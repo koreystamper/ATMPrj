@@ -1,10 +1,13 @@
 package atmPack;
 /********************************************************
  *
- * Describe the class here
+ * Project 1 of CIS 163 - ATMProject
+ * 	Creates ATM objects that can be manipulated with cash denominations
+ * 	of hunred, fifty, and twenty dollar bills. Users can withdraw and
+ * 	deposit the same denominations. Users can also save and load
+ * 	past ATM object values.
  *
- *   IMPORTANT:  This is skeleton code.... you will
- *   need to modify (or create) almost all methods
+
  * @author Korey Stamper
  *
  ********************************************************/
@@ -43,47 +46,47 @@ public class ATM extends Object {
 		twenties = 0;
 	}
 
-	/**
+	/***********************************************************************
 	 * constructor to initialize instance variables with other ATM parameter
 	 * @param other
-	 */
+	 ***********************************************************************/
 	public ATM(ATM other) {
 		this.hundreds = other.hundreds;
 		this.fifties = other.fifties;
 		this.twenties = other.twenties;
 	}
 
-	/**
+	/****************************
 	 *
 	 * @return integer hundreds
-	 */
+	 ****************************/
 	public int getHundreds() {
 		return hundreds;
 	}
 
-	/**
-	 * set this.hundreds to new integer
-	 * @param hundreds
-	 */
-	public void setHundreds(int hundreds) {
-		this.hundreds = hundreds;
-	}
+//	/**
+//	 * set this.hundreds to new integer
+//	 * @param hundreds
+//	 */
+//	public void setHundreds(int hundreds) {
+//		this.hundreds = hundreds;
+//	}
 
-	/**
+	/**************************
 	 *
 	 * @return integer fifties
-	 */
+	 **************************/
 	public int getFifties() {
 		return fifties;
 	}
 
-	/**
-	 * set this.fifties to new integer
-	 * @param fifties
-	 */
-	public void setFifties(int fifties) {
-		this.fifties = fifties;
-	}
+//	/**
+//	 * set this.fifties to new integer
+//	 * @param fifties
+//	 */
+//	public void setFifties(int fifties) {
+//		this.fifties = fifties;
+//	}
 
 	/**
 	 *
@@ -93,13 +96,13 @@ public class ATM extends Object {
 		return twenties;
 	}
 
-	/**
-	 * set this.twenties to new integer
-	 * @param twenties
-	 */
-	public void setTwenties(int twenties) {
-		this.twenties = twenties;
-	}
+//	/**
+//	 * set this.twenties to new integer
+//	 * @param twenties
+//	 */
+//	public void setTwenties(int twenties) {
+//		this.twenties = twenties;
+//	}
 
 	/******************************************************************
 	 *  A constructor that initializes the instance variables with
@@ -113,7 +116,6 @@ public class ATM extends Object {
 	 *
 	 *****************************************************************/
 	public ATM(int hundries, int fifties, int twenties) {
-
 		// disallow negative params
 		if (hundries < 0 || fifties < 0 || twenties < 0)
 			throw new IllegalArgumentException();
@@ -213,10 +215,11 @@ public class ATM extends Object {
 	}
 
 
-	/**
+	/**************************************************
 	 * Subtracts ATM other param to the this.atm object
 	 * @param other
-	 */
+	 *
+	 **************************************************/
 	public void takeOut(ATM other) {
 		if ((this.hundreds < other.hundreds) || (this.fifties < other.fifties) || (this.twenties < other.twenties))
 			throw new IllegalArgumentException();
@@ -272,8 +275,6 @@ public class ATM extends Object {
 		return s + ", " + t + ", " + u;
 	}
 
-
-
 	public void save(String fileName) {
 
 		PrintWriter out = null;
@@ -283,7 +284,6 @@ public class ATM extends Object {
 			throw new IllegalArgumentException();
 		}
 
-		//
 
 		out.println(hundreds);
 		out.println(fifties);
