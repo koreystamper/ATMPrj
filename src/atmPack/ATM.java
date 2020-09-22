@@ -154,8 +154,11 @@ public class ATM extends Object {
 		throw new IllegalArgumentException();
 	}
 
-
+	//method converts atm 1 and 2 to dollar amounts, then checks to see if values are equal
 	public static boolean equals (ATM other1, ATM other2) {
+		if (other2 == null || other1 == null) {
+			throw new IllegalArgumentException();
+		}
 		return (convertToDollars(other1) == convertToDollars(other2));
 	}
 
